@@ -1,0 +1,228 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <style>
+        body {
+            background-color: #1D4F91;
+            color: #333;
+            margin: 0;
+            padding: 2px;
+        }
+
+        section {
+            padding: 30px;
+            background-color: #fff;
+            border: 2px solid #ddd;
+            margin-bottom: 20px;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+            border-radius: 10px;
+            margin-top: 20px;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        th, td {
+            padding: 10px;
+            text-align: left;
+        }
+
+        th {
+            background-color: #ffffff; 
+        }
+
+        input[type="text"] {
+            width: 100%;
+            padding: 8px;
+            font-size: 14px;
+            border: 1px solid gray;
+        }
+
+        h1 {
+            color: white; 
+            text-align: center;
+            font-weight: bold; 
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.6); 
+        }
+
+    </style>
+
+    <title>Form Pendaftaran HIMATIK</title>
+</head>
+<body>
+    <h1>Selamat Datang di Formulir Pendaftaran HIMATIK PNJ</h1>
+
+    <section>
+        <h2>Form Pendaftaran</h2>
+        <form>
+            <table>
+                <tr>
+                    <th>Nama Lengkap</th>
+                </tr>
+                <tr>
+                    <td><input type="text" id="nama" name="nama"></td>
+                </tr>
+                <tr>
+                    <th>NIM</th>
+                </tr>
+                <tr>
+                    <td><input type="text" id="nim" name="nim"></td>
+                </tr>
+                <tr>
+                    <th>Program Studi</th>
+                </tr>
+                <tr>
+                    <td>
+                        <label for="prodi"></label>
+                        <select id="prodi" name="prodi">
+                            <option value="TI">Teknik Informatika</option>
+                            <option value="TMD">Teknik Multimedia Digital</option>
+                            <option value="TMJ">Teknik Multimedia Jaringan</option>
+                            <option value="TKJ">Teknik Komputer Jaringan</option>
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <th>Kelas</th>
+                </tr>
+                <tr>
+                    <td><input type="text" id="kelas" name="kelas"></td>
+                </tr>
+                <tr>
+                    <th>Tempat, Tanggal Lahir</th>
+                </tr>
+                <tr>
+                    <td>
+                        <input type="date" id="tempat_tanggal_lahir" name="tempat_tanggal_lahir" max="2025-3-13"><br>
+                    </td>
+                </tr>
+                <tr>
+                    <th>Jenis Kelamin</th>
+                </tr>
+                <tr>
+                    <td>
+                        <input type="radio" id="jenis_kelamin_1" name="jenis_kelamin" value="Laki-Laki">
+                        <label for="jenis_kelamin_1">Laki-Laki</label><br>
+                        <input type="radio" id="jenis_kelamin_2" name="jenis_kelamin" value="Perempuan">
+                        <label for="jenis_kelamin_2">Perempuan</label><br>
+                    </td>
+                </tr>
+                <tr>
+                    <th>Alamat</th>
+                </tr>
+                <tr>
+                    <td>
+                        <textarea name="message" rows="10" cols="30"></textarea>
+                    </td>
+                </tr>
+                <tr>
+                    <th>No Telepon</th>
+                </tr>
+                <tr>
+                    <td><input type="text" id="no_telp" name="no_telp"></td>
+                </tr>
+                <tr>
+                    <th>Email</th>
+                </tr>
+                <tr>
+                    <td><input type="email" id="email" name="email"></td>
+                </tr>
+                <tr>
+                    <th>Hobi</th>
+                </tr>
+                <tr>
+                    <td>
+                        <input type="checkbox" id="hobi1" name="hobi" value="Membaca">
+                        <label for="hobi1">Membaca</label><br>
+
+                        <input type="checkbox" id="hobi2" name="hobi" value="Olahraga">
+                        <label for="hobi2">Berolahraga</label><br>
+
+                        <input type="checkbox" id="hobi3" name="hobi" value="Musik">
+                        <label for="hobi3">Mendengarkan Musik</label><br>
+
+                        <input type="checkbox" id="hobi4" name="hobi" value="Game">
+                        <label for="hobi4">Bermain Game</label><br>
+
+                        <input type="checkbox" onclick="toggleLainnya(this);" onchange="toggleLainnya(this);" onload="toggleLainnya(this);" id="hobiLainnya" name="hobi" value="Lainnya">
+                        <label for="hobiLainnya">Lainnya:</label>
+                        <input type="text" disabled readonly id="hobiLainnyaInput" name="hobiLainnya">
+                    </td>
+                </tr>
+                <tr>
+                    <th>Warna Favorit</th>
+                </tr>
+                <tr>
+                    <td>
+                        <input type="color" id="warna_favorit" name="warna_favorit" value="#ff0000">
+                    </td>
+                </tr>
+                <tr>
+                    <th>Hari Favorit</th>
+                </tr>
+                <tr>
+                    <td>
+                        <input type="checkbox" id="hari1" name="hari_favorit" value="Senin">
+                        <label for="hari1">Senin</label><br>
+                        <input type="checkbox" id="hari2" name="hari_favorit" value="Selasa">
+                        <label for="hari2">Selasa</label><br>
+                        <input type="checkbox" id="hari3" name="hari_favorit" value="Rabu">
+                        <label for="hari3">Rabu</label><br>
+                        <input type="checkbox" id="hari4" name="hari_favorit" value="Kamis">
+                        <label for="hari4">Kamis</label><br>   
+                        <input type="checkbox" id="hari5" name="hari_favorit" value="Jumat">
+                        <label for="hari5">Jumat</label><br>   
+                        <input type="checkbox" id="hari6" name="hari_favorit" value="Sabtu">
+                        <label for="hari6">Sabtu</label><br>   
+                        <input type="checkbox" id="hari7" name="hari_favorit" value="Minggu">
+                        <label for="hari7">Minggu</label><br>                        
+                    </td>
+                </tr>
+                <tr>
+                    <th>Angka Favorit</th>
+                </tr>
+                <tr>
+                    <td><input type="number" id="angka_favorit" name="angka_favorit" min="1" max="100"></td>
+                </tr>
+                <tr>
+                    <th>Alasan ingin bergabung ke HIMATIK</th>
+                </tr>
+                <tr>
+                    <td> <textarea name="message" rows="10" cols="30"></textarea></td>
+                </tr>
+                <tr>
+                    <th>Upload KTM/KTP</th>
+                </tr>
+                <tr>
+                    <td><input type="file" id="file_saya" name="file_saya"></td>
+                </tr>
+                <tr>
+                    <td colspan="2" style="text-align: right; padding-top: 30px;">
+                        <button type="reset" onclick="alert('Form anda telah direset!')">Reset</button>
+                        <button type="button" onclick="alert('Form anda telah disubmit!')">Submit</button>
+                    </td>
+                </tr>
+            </table>
+        </form>
+    </section>
+</body>
+</html>
+
+<script>
+    function toggleLainnya(checkbox) {
+        var inputLainnya = document.getElementById("hobiLainnyaInput");
+
+        if (!checkbox.checked) {
+            inputLainnya.value = ""; 
+            inputLainnya.disabled = true;
+            inputLainnya.readOnly = true;
+        } else {
+            inputLainnya.disabled = false;
+            inputLainnya.readOnly = false;
+        }
+    }
+</script>
